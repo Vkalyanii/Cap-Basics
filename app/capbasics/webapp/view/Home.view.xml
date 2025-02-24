@@ -1,0 +1,47 @@
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  controllerName="com.app.capbasics.controller.Home">
+  
+  <Page id="_IDGenPage1" title="Book Shop">
+    <!-- Table from sap.m -->
+    <Table id="booksTable"
+      items="{/Books}"
+      mode="SingleSelectLeft">
+      
+      <!-- Header toolbar with 'add' button -->
+      <headerToolbar>
+        <Toolbar id="_IDGenToolbar" class="sapUiLargeMarginEnd">
+          <Button id="_IDGenButton" text="Add" press="onAddPress"/>
+                   <Button id="_IDGenButton1" text="edit" press="onEditPress"/>
+                            <Button id="_IDGenButton2" text="delete" press="ondeletePress"/>
+        </Toolbar>
+      </headerToolbar>
+      
+      <!-- Table columns -->
+      <columns>
+        <Column id="_IDGenColumn1">
+          <Text id="_IDGenText" text="ID" />
+        </Column>
+        <Column id="_IDGenColumn2">
+          <Text id="_IDGenText1" text="Title" />
+        </Column>
+        <Column id="_IDGenColumn3">
+          <Text id="_IDGenText2" text="Stock" />
+        </Column>
+      </columns>
+      
+      <!-- Table rows -->
+      <items>
+        <ColumnListItem id="_IDGenColumnListItem">
+          <cells>
+            <Text id="_IDGenText3" text="{ID}" />
+            <Text id="_IDGenText4" text="{title}" />
+            <Text id="_IDGenText5" text="{stock}" />
+          </cells>
+        </ColumnListItem>
+      </items>
+      
+    </Table>
+  </Page>
+</mvc:View>
