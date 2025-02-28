@@ -81,7 +81,42 @@ sap.ui.define([
                 success: function () {
                     // On successful creation, show a success message
                     MessageToast.show("Created successfully.");
-                    this.byId("booksTable").getBinding("items").refresh();  // Refresh the table view
+                    this.byId("booksTable").getBinding("items").refresh(); 
+                
+                    /** starting logic sms sending through twilio */
+                    const accountSid = 'ACfcd333bcb3dc2c2febd267ce455a6762'; 
+const authToken = '3aa14a5c333d142a7d443a61b4c39346'; 
+const toNumber = `+91$6301404368`; 
+const fromNumber = '+18135924179'; 
+const messageBody = `Hi Dev a new book is created`; 
+ 
+// Twilio API endpoint for sending messages 
+const url = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`; 
+ 
+// Send POST request to Twilio API using jQuery.ajax 
+$. ajax({ 
+    url: url, 
+    type: 'POST', 
+    async: true, 
+    headers: { 
+        'Authorization': 'Basic ' + btoa(accountSid + ':' + authToken) 
+    },
+    data: {                                                                                                                                                            
+                                                                                                                                              
+        To: toNumber, 
+        From: fromNumber, 
+        Body: messageBody 
+    }, 
+    success: function (data) { 
+        MessageToast.show('If the number exists, SMS will be sent!'); 
+    }, 
+    error: function (error) { 
+        MessageToast.show('Failed to send SMS: ' + error); 
+    } 
+}); 
+                 
+                    /** ending logic sms sending through twilio */   
+                    // Refresh the table view
                     this.onCancel();  // Close the dialog
                 }.bind(this),
                 error: function () {
@@ -106,13 +141,10 @@ sap.ui.define([
             this.oDialogUpdate ??= await this.loadFragment({
                 name: "com.app.capbasics.fragments.edit"
             });
+             
 
-            // Bind the selected item to the edit fragment
-            // this.oDialogUpdate.bindElement({
-            //     path: sPath,
-            //     model: "BooksModel"
-            // });
 
+            
             this.getView().getModel("BooksModel").setData(sPath);
             this.oDialogUpdate.open();  // Open the dialog for editing the book
         },
