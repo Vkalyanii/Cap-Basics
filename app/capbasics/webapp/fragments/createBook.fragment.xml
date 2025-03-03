@@ -19,6 +19,6 @@
 
     <endButton>
       <Button id="_IDGenButto2n4" text="Cancel" press="onCancelCreatePress" />
-    </endButton>2
+    </endButton>
   </Dialog>
 </core:FragmentDefinition>

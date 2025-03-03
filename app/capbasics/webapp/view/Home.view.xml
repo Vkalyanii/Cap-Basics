@@ -7,7 +7,10 @@
     <!-- Table from sap.m -->
     <Table id="booksTable"
       items="{/Books}"
-      mode="SingleSelectLeft">
+      mode="SingleSelectLeft"
+      growing="true"
+      growingThreshold="5"> 
+     
       
       <!-- Header toolbar with 'add' button -->
       <headerToolbar>
