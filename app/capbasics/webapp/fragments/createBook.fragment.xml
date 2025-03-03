@@ -2,7 +2,7 @@
   <Dialog id="createBookDialog" title="Create New Book" >
     <content>
       <VBox id="_IDGenVBox21">
-        <Label id="lldjije" text="ID" />
+        <Label id="_IDGenL2abel" text="ID" />
         <Input id="inputI2D" value="{BooksModel>/ID}" placeholder="Enter Book ID" />
 
         <Label id="_IDGe2nLabel1" text="Title" />
@@ -19,6 +19,6 @@
 
     <endButton>
       <Button id="_IDGenButto2n4" text="Cancel" press="onCancelCreatePress" />
-    </endButton>
+    </endButton>2
   </Dialog>
 </core:FragmentDefinition>

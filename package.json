@@ -8,7 +8,6 @@
   "dependencies": {
     "@cap-js-community/odata-v2-adapter": "^1.14.1",
     "@sap/cds": "^8",
-    "@sendgrid/mail": "^8.1.4",
     "express": "^4"
   },
   "devDependencies": {
