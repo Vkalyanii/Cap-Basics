@@ -17,5 +17,43 @@
   "scripts": {
     "start": "cds-serve",
     "watch-capbasics": "cds watch --open capbasics/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "[development]": {
+          "kind": "sqlite"
+        },
+        "[production]": {
+          "kind": "hana"
+        }
+      },
+      "[production]": {
+        "auth": "xsuaa"
+      },
+      "[development]": {
+        "auth": {
+          "kind": "mocked",
+          "users": {
+            "sree.sap@com": {
+              "id": "kalyani.sap@com",
+              "password": "kalyani",
+              "roles": [
+                "Admin"
+              ]
+            },
+            "ram@sap.com": {
+              "id": "ram@sap.com",
+              "password": "Ram",
+              "roles": [
+                "User"
+              ]
+            }
+          }
+        }
+      }
+    }
   }
 }
+ 
+

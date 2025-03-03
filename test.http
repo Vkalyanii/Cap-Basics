@@ -1,0 +1,36 @@
+
+###Reading Data
+###Username:password
+@AdminCredentials=Basic kalyani.sap@com:kalyani
+@UserCredenitials=Basic ram@sap.com:Ram
+ 
+
+GET http://localhost:39445/odata/v4/catalog/Books HTTP/1.1
+Authorization: {{AdminCredentials}}
+
+###REad
+GET http://localhost:39445/odata/v4/catalog/Books HTTP/1.1
+Authorization: {{UserCredenitials}}
+ 
+###Create
+POST http://localhost:39445/odata/v4/catalog/Books HTTP/1.1
+Authorization: {{AdminCredentials}}
+Content-Type: application/json
+ 
+{
+    "ID": 77,
+    "title": "CAP",
+    "stock": "45"
+}
+ 
+ 
+###Create
+POST http://localhost:39445/odata/v4/catalog/Books HTTP/1.1
+Authorization:  {{UserCredenitials}}
+Content-Type: application/json
+ 
+{
+    "ID": 99,
+    "title": "CAP",
+    "stock": "45"
+}
